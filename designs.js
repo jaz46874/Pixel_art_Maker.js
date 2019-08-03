@@ -4,6 +4,7 @@ const canvas = $('#pixelCanvas');
   * sizePicker gathers int userinput for dimensions of grid
   * preventDefault to stop page from reloading and losing data input when form is submitted
 */
+
 $('#sizePicker').submit( event => {
     event.preventDefault();
 
