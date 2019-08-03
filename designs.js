@@ -1,4 +1,3 @@
-
 const canvas = $('#pixelCanvas');
 
 $('#sizePicker').submit( event => {
@@ -9,7 +8,7 @@ $('#sizePicker').submit( event => {
     canvas.html('');
 
   makeGrid(height, width);
-  colorChanger();
+  cellColor();
 });
 
 function makeGrid(height, width) {
@@ -17,16 +16,13 @@ function makeGrid(height, width) {
     canvas.append('<tr> </tr>'); }
   for (var i = 1; i <= width; i++) {
       $('tr').append('<td> </td>');
-    }}
+}};
 
-function colorChanger() {
-  $('td').click(function colorChanger() {
-      const color = $('#colorPicker').val();
-      if ($(event.currentTarget).attr('style')) {
-        $(event.currentTarget).removeAttr("style");
-      }
-      else {
-      $(event.currentTarget).css("background-color", color)
-    }
-});
-};
+
+function cellColor() {
+      $('td').click(function() {
+      const color = $("#colorPicker").val();
+      $(this).removeAttr("background-color");
+      $(this).css("background-color", color);
+
+})};
